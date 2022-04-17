@@ -22,21 +22,34 @@ Design hints from unit tests:
 
 Guiding principles of clean code:
     Modular
-    Cohesive
     Separation of concern
     Abstraction/information hiding
     Loosely coupled
+    Cohesive
 
-Ways to achieve above:
+Ways to achieve above/ best refactoring practices:
     DRY
     SOLID
+    Prefer clarity over brevity
+    Boy scout rule: Always leave the code base healthier than when you found it
+    Split Loop
+    Replace temporary variable with Query
+    Split Temporary Variable: Don't use same variable for different contexts/purposes
+
 Code smells:
     Monster methods
+    Usage of code types -> replace by strategy/polymorphism
     Don't have methods using boolean in signature, it means method violates SRP
     God class
     Too many parameters
     Lambdas more than 2-3 lines
     Primitive obsession -> use microtypes instead(java record, scala case class simplifies making microtypes)
+    feature envy : when we are doing too much about state of an object from another object -> follow 'Law of demeter',meaning
+    an object should interact with its immediate dependencies only; objects must follow 'Tell, don't ask' pattern.
+    Move all the code modifying an object's state into that object and make object expose an API for clients. This helps
+    in hiding implementation details, and hence reduces coupling, as any changes are localized to class only
+
+    refactoring...page 90
 
 
 
