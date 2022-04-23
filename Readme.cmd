@@ -33,11 +33,13 @@ Ways to achieve above/ best refactoring practices:
     Prefer clarity over brevity
     Boy scout rule: Always leave the code base healthier than when you found it
     Split Loop
-    Replace temporary variable with Query
+    Replace temporary variable with Query(calling a method having meaningful name)
     Split Temporary Variable: Don't use same variable for different contexts/purposes
+    Put things together that change together
 
 Code smells:
     Monster methods
+    Global variables
     Usage of code types -> replace by strategy/polymorphism
     Don't have methods using boolean in signature, it means method violates SRP
     God class
@@ -47,9 +49,16 @@ Code smells:
     feature envy : when we are doing too much about state of an object from another object -> follow 'Law of demeter',meaning
     an object should interact with its immediate dependencies only; objects must follow 'Tell, don't ask' pattern.
     Move all the code modifying an object's state into that object and make object expose an API for clients. This helps
-    in hiding implementation details, and hence reduces coupling, as any changes are localized to class only
-
-    refactoring...page 90
+    in hiding implementation details, and hence reduces coupling, as any changes are localized to class only.
+    Divergent change: When we have to change a module in different ways for different reasons. It means module is not following SRP
+    and needs to be split.
+    Data clumps -> put such data pieces together in a class, and then look for feature envy on this class to move behaviour to it
+    Repeated switch/if-else statements -> replace with polymorphism
+    loops -> replace with first class functions like filter,map etc
+    lazy elements -> code elements like class, functions etc which over the time loose their importance. Needs to be deleted.
+    Message chains/middle man
+    Refused request: when a subclass methods don't really need the behaviour and code it inherits from parent class ->
+    Replace inheritance with delegation
 
 
 
