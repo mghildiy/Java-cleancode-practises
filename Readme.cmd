@@ -60,5 +60,7 @@ Code smells:
     Refused request: when a subclass methods don't really need the behaviour and code it inherits from parent class ->
     Replace inheritance with delegation
 
+    refactoring...page 100
+
 
 
